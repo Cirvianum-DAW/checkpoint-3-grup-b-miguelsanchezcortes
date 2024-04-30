@@ -33,4 +33,5 @@ function validateName() {
   displayError(nameInput, "El nom no és vàlid");
 }
 
+document.getElementById('loginform').
 // addEventListeners...
