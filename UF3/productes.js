@@ -21,7 +21,6 @@ function initProductSelect() {
     const option = document.createElement("option");
     option.value = product.name;
     option.innerHTML = product.name;
-    
     preu = product.price;
     selectProduct.appendChild(option);
   });
