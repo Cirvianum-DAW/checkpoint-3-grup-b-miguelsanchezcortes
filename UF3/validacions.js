@@ -14,11 +14,11 @@ document
 
     if (
       nom == "" ||
-      surname == "" 
-      // email == "" ||
-      // age == "" ||
-      // gender == "Select" ||
-      // message == ""
+      surname == "" ||
+      email == "" ||
+      age == "" ||
+      gender == "Select" ||
+      message == ""
     ) {
       alert("tots els camps són requerits");
       return false;
@@ -29,6 +29,18 @@ document
     }
     if (!validateNameAndSurname(surname)) {
       alert("cognom no valid");
+      return false;
+    }
+    if(!validarEmail(email)){
+      alert("email no valid");
+      return false;
+    }
+    if(gender == "Select"){
+      alert("Has de triar un genere");
+      return false;
+    }
+    if(!validateMessage(message)){
+      alert("Missatge no valid");
       return false;
     }
   });
@@ -69,6 +81,16 @@ function validateName() {
 function validateNameAndSurname(name) {
   let nomRegex = /^[a-zA-ZÀ-ÿ\s]{3,49}$/;
   return nomRegex.test(nom);
+}
+
+function validarEmail(correu) {
+  let correuRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return correuRegex.test(correu);
+}
+
+function validateMessage(message){
+  let messageRegex = /^[a-zA-ZÀ-ÿ\s]{10,200}$/;
+  return messageRegex.test(message)
 }
 
 // addEventListeners...
