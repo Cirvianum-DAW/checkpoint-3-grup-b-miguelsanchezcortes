@@ -31,9 +31,16 @@ async function getPokemon(id) {
     imgPokemon.src = character.sprites.front_default;
     const abilitats = character.habilities;
     const a = abilitats.map((ability)=>{
-        ability.name
+        ability
     })
     console.log(a);
+
+    const input = document.createElement('input');
+    const button = document.createElement('button');
+    input.value = "afegeix id";
+    button.innerHTML = "submit"
+    divPokemon.appendChild(input);
+    divPokemon.appendChild(button);
   } catch (error) {
     console.error(error);
   }
