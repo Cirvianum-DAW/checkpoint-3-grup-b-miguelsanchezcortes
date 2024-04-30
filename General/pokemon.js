@@ -20,16 +20,24 @@ async function getPokemon(id) {
     const namePokemon = document.getElementById('name');
     const heightPokemon = document.getElementById('height');
     const weightPokemon = document.getElementById('weight');
+    const imgPokemon = document.getElementById('sprite');
     const abilities = document.getElementById('abilities');
     const ul = document.querySelector('ul');
+    const h4 = document.querySelector('h4');
 
     namePokemon.innerHTML = "Nom del Pokemon: " + character.nom;
     heightPokemon.innerHTML = "Height: "+character.height;
     weightPokemon.innerHTML = "Weight: "+character.weight;
+    imgPokemon.src = character.sprites.front_default;
+    const abilitats = character.habilities;
+    const a = abilitats.map((ability)=>{
+        ability.name
+    })
+    console.log(a);
   } catch (error) {
     console.error(error);
   }
 }
 
 
-getPokemon(32);
+getPokemon(12);
