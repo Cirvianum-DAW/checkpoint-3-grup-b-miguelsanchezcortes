@@ -31,22 +31,20 @@ document
       alert("cognom no valid");
       return false;
     }
-    if(!validarEmail(email)){
+    if (!validarEmail(email)) {
       alert("email no valid");
       return false;
     }
-    if(gender == "Select"){
+    if (gender == "Select") {
       alert("Has de triar un genere");
       return false;
     }
-    if(!validateMessage(message)){
+    if (!validateMessage(message)) {
       alert("Missatge no valid");
       return false;
     }
   });
 const nameInput = document.querySelector('input[name="name"]');
-
-
 
 // Si no saps com utilitzar aquestes funcions, pots fer ús de missatges per consol o situar
 // els errors allà on consideris lògic
@@ -80,7 +78,7 @@ function validateName() {
 
 function validateNameAndSurname(name) {
   let nomRegex = /^[a-zA-ZÀ-ÿ\s]{3,49}$/;
-  return nomRegex.test(nom);
+  return nomRegex.test(name);
 }
 
 function validarEmail(correu) {
@@ -88,9 +86,9 @@ function validarEmail(correu) {
   return correuRegex.test(correu);
 }
 
-function validateMessage(message){
+function validateMessage(message) {
   let messageRegex = /^[a-zA-ZÀ-ÿ\s]{10,200}$/;
-  return messageRegex.test(message)
+  return messageRegex.test(message);
 }
 
 // addEventListeners...
